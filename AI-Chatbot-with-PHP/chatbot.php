@@ -4,8 +4,13 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-// Gemini API key (store in .env in production)
-$api_key = "***REMOVED***";
+// Gemini API key: read from the GEMINI_API_KEY environment variable
+$api_key = getenv("GEMINI_API_KEY");
+if (!$api_key) {
+    http_response_code(500);
+    echo json_encode(["error" => "GEMINI_API_KEY environment variable is not set"]);
+    exit;
+}
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$api_key";
 
 // Read user input
