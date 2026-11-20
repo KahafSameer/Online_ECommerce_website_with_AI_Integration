@@ -136,8 +136,8 @@ The platform serves as a one-stop destination for electronics and gadgets, featu
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/momal-ecommerce.git
-   cd momal-ecommerce
+   git clone https://github.com/KahafSameer/Online_ECommerce_website_with_AI_Integration.git
+   cd Online_ECommerce_website_with_AI_Integration
    ```
 
 2. **Setup XAMPP**
@@ -162,10 +162,11 @@ The platform serves as a one-stop destination for electronics and gadgets, featu
    ```
 
 5. **Setup AI Chatbot (Optional)**
-   ```php
-   // Edit AI-Chatbot-with-PHP/chatbot.php
-   $api_key = "your-gemini-api-key"; // Get from Google AI Studio
+   The chatbot reads the key from the `GEMINI_API_KEY` environment variable (see [`.env.example`](.env.example)). Set it for Apache, for example in `httpd.conf` or `.htaccess`:
+   ```apache
+   SetEnv GEMINI_API_KEY your_gemini_api_key_here
    ```
+   Get a key from [Google AI Studio](https://aistudio.google.com).
 
 6. **Launch Application**
    ```bash
